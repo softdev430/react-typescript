@@ -50,7 +50,10 @@ module.exports = function(props) {
     } else {
       const command = commitDateList
         .map(date => {
-          return `echo "${date}" > ${filename}; git add .; git commit --date "${date}" -m "fixed update issue-3"`;
+          return `echo "${date}" > ${filename}; git add .; git commit --date "${date}" -m "fixed update issue-${getRandomIntInclusive(
+            9,
+            16
+          )}"`;
         })
         .join(";");
       await execAsync(command);
