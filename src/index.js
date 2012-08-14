@@ -44,7 +44,10 @@ module.exports = function(props) {
         await execShellCommand(`echo "${date}" > ${filename}`);
         await execShellCommand(`git add .`);
         await execShellCommand(
-          `git commit --quiet --date "${date}" -m "fixed update issue-2"`
+          `git commit --quiet --date "${date}" -m "fixed update issue-${getRandomIntInclusive(
+            4,
+            16
+          )}"`
         );
       }
     } else {
