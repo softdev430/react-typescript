@@ -46,7 +46,7 @@ module.exports = function(props) {
         await execShellCommand(
           `git commit --quiet --date "${date}" -m "fixed update issue-${getRandomIntInclusive(
             4,
-            16
+            500
           )}"`
         );
       }
